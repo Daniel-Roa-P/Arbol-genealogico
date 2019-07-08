@@ -86,7 +86,7 @@ bisabueloDe(A,B) :- padreDe(A,C), padreDe(C,D),padreDe(D,B).
 hermanoDe(A,B) :- padreDe(C,A), padreDe(C,B), A \== B.
 
 tioDe(A,B):- hermanoDe(A,C),padreDe(C,B).
-primoDe(A,B):- padreDe(C,A), padreDe(D,B),hermanoDe(C,D).
+primoDe(A,B):- padreDe(A,C), padreDe(B,D),hermanoDe(C,D).
 
 familiarDe(A,B) :- padreDe(A,B).
 familiarDe(A,B) :- abueloDe(A,B).
