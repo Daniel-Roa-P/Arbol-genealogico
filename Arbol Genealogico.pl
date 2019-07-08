@@ -62,7 +62,7 @@ padreDe('laurencio','julia').
 padreDe('laurencio','maria').
 padreDe('laurencio','adena').
 
-padreDe('alfonza','ivany').
+padreDe('alfonsa','ivany').
 padreDe('cencio','ivany').
 
 padreDe('iguazel','cecilia').
@@ -79,13 +79,64 @@ padreDe('rafel','victor').
 padreDe('rafel','francisco').
 padreDe('rafel','narcisa').
 
+%Cuarta Generacion
+
+padreDe('evalina','naira').
+padreDe('evalina','maricruz').
+padreDe('madison','naira').
+padreDe('madison','maricruz').
+
+padreDe('wayca','calquin').
+padreDe('wayca','sabine').
+padreDe('wayca','liora').
+padreDe('marcio','calquin').
+padreDe('marcio','sabine').
+padreDe('marcio','liora').
+
+padreDe('maitena','josias').
+padreDe('maitena','zuleika').
+padreDe('agus','josias').
+padreDe('agus','zuleika').
+
+padreDe('lissa','laurencio').
+padreDe('lissa','cid').
+padreDe('emerio','laurencio').
+padreDe('emerio','cid').
+
+padreDe('sol','marana').
+padreDe('sol','alfonsa').
+padreDe('arnoldo','marana').
+padreDe('arnoldo','alfonsa').
+
+padreDe('valerie','cencio').
+padreDe('valerie','iguazel').
+padreDe('apolo','cencio').
+padreDe('apolo','iguazel').
+
+padreDe('manon','albino').
+padreDe('manon','laia').
+padreDe('amelio','albino').
+padreDe('amelio','laia').
+
+padreDe('barbea','rafel').
+padreDe('barbea','erik').
+padreDe('barbea','hermalindo').
+padreDe('barbea','selemias').
+padreDe('falco','rafel').
+padreDe('falco','erik').
+padreDe('falco','hermalindo').
+padreDe('falco','selemias').
+
 hijoDe(A,B) :- padreDe(B,A).
 abueloDe(A,B) :- padreDe(A,C), padreDe(C,B).
-bisabueloDe(A,B) :- padreDe(A,C), padreDe(C,D),padreDe(D,B).
+bisAbueloDe(A,B) :- padreDe(A,C), padreDe(C,D),padreDe(D,B).
+tatarabueloDe(A,B) :- padreDe(A,C), padreDe(C,D),padreDe(D,E),padreDe(E,B).
 
 hermanoDe(A,B) :- padreDe(C,A), padreDe(C,B), A \== B.
 
 tioDe(A,B):- hermanoDe(A,C),padreDe(C,B).
+tioAbueloDe(A,B):-hermanoDe(A,C),abueloDe(C,B).
+bisTioDe(A,B):-hermanoDe(A,C),bisAbueloDe(C,B).
 primoDe(A,B):- padreDe(C,A), padreDe(D,B),hermanoDe(C,D).
 
 familiarDe(A,B) :- padreDe(A,B).
