@@ -150,7 +150,6 @@ familiarDe(A,B) :- abueloDe(A,B).
 familiarDe(A,B) :- hermanoDe(A,B).
 familiarDe(A,B) :- hijoDe(A,B).
 
-esFeliz(A):- padreDe(A,_).
 
 
 
